@@ -1,0 +1,32 @@
+function s = mySin(deg)
+    % 将角度转换为弧度
+    rad = deg * pi / 180;
+
+    % 设置级数展开项数
+    n_terms = 10; % 可以根据需求增加项数以提高精度
+
+    % 初始化结果
+    s = 0;
+
+    % 利用泰勒级数近似sin函数
+    for i = 1:n_terms
+        sign = (-1)^(i+1); % 计算符号
+        fact = factorial(2*i-1); % 计算阶乘
+        s = s + sign * rad^(2*i-1) / fact;
+    end
+end
+
+function main()
+    % 请求用户输入角度
+    angle_deg = input('请输入一个角度（以度为单位）：', 's');
+    angle_deg = str2double(angle_deg);
+
+    % 调用自定义的sin函数
+    result = mySin(angle_deg);
+
+    % 显示结果
+    disp(['The approximate sine of ', num2str(angle_deg), ' degrees is: ', num2str(result)]);
+end
+
+% 运行主程序
+main();
