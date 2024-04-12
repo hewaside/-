@@ -37,8 +37,93 @@
 四、软件设计
 
 设计由图4.1所示，输的弧度后，利用泰勒展开计算出所需要的结果。
-   ![image](https://github.com/hewaside/-/assets/165648266/a06a927c-b141-4d22-9baa-ea71d091d3cd)
+![image](https://github.com/hewaside/-/assets/165648266/c556b661-a7d8-4e74-a699-1a07a875e182)
+
+
 测试程序设计如下图所示
+
+
+
 ![image](https://github.com/hewaside/-/assets/165648266/fadc8db1-78b4-4d08-8c89-b58abaa214f4)
 
 测试指令被给出后，函数生成随机数后使用编写的计算器代码计算出结果并将计算出的结果和标准三角函数公式作差，判断误差范围。若误差范围在  内，输出判断无误结果。
+
+五、计算模块函数设计。
+
+对于各个计算模块，接口以及函数定义如下：
+
+主函数 TriangleCalculation_1()
+
+ 主函数，根据用户输入的类型计算三角函数值或反三角函数值
+ 
+ 输入参数: 函数选择 角度或数值
+ 
+ 输出参数: 结果
+ 
+ 内部包含角度转弧度实现判断功能代码。
+ 
+
+ 
+计算正弦函数 calculateSin(rad, n_terms)
+
+% 输入参数:
+
+     rad: 弧度制
+     
+     n_terms: 泰勒级数中的项数
+% 输出参数:
+
+     sin_val: 计算得到的正弦值
+
+     
+
+计算正切函数 calculatetan(rad, n_terms)
+
+% 输入参数:
+
+    rad: 弧度制
+    
+     n_terms: 泰勒级数中的项数
+     
+% 输出参数:
+
+     tan_val: 计算得到正切值
+
+
+     
+计算反正弦函数 calculateArcsin(x, n_terms)
+
+% 输入参数:
+     x: 输入数值，应在 [-1, 1] 范围内
+     
+     n_terms: 泰勒级数中的项数
+     
+% 输出参数:
+
+     arcsin_val: 计算得到的反正弦值
+     
+     
+计算反正切函数 calculateArctan(x, n_terms)
+
+% 输入参数:
+
+     x: 输入数值
+
+     
+     n_terms: 泰勒级数中的项数
+% 输出参数:
+
+     arctan_val: 计算得到的反正切值
+     
+计算双阶乘 doubleFactorial(n)
+
+% 计算给定数的双阶乘值，用于arc计算
+
+% 输入参数:
+
+     n: 输入数值
+     
+% 输出参数:
+
+     dfact: 计算得到的双阶乘值
+
