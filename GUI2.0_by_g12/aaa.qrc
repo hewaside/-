@@ -1,0 +1,7 @@
+<RCC>
+  <qresource prefix="lay">
+    <file>cqu2.jpg</file>
+  </qresource>
+  <qresource prefix="新前缀"/>
+  <qresource/>
+</RCC>
